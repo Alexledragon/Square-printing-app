@@ -47,10 +47,12 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             while (isAnswerSizeGiven == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 string squareSizeWantedString = Console.ReadLine(); //declare this as var to fix CS8600
                 int.TryParse(squareSizeWantedString, out squareSizeWanted);
                 if (squareSizeWanted >= 2 & squareSizeWanted <= 40)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     isAnswerSizeGiven = true;
                 }
                 else if (squareSizeWanted == 0 & squareSizeWantedString == "")
@@ -65,6 +67,7 @@ namespace Square_printing_app
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.WriteLine("Random");
+                    Console.ForegroundColor = ConsoleColor.White;
                     spamModeCheck++;
                 }
                 else
@@ -75,8 +78,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int i = 0; i < 5; i++)
                     {
@@ -134,10 +141,12 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             while (isAnswerAmountVerticalGiven == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 string squareAmmountWantedVerticalString = Console.ReadLine(); //declare this as var to fix CS8600
                 int.TryParse(squareAmmountWantedVerticalString, out squareAmmountWantedVertical);
                 if (squareAmmountWantedVertical >= 1 & squareAmmountWantedVertical <= squareAmmountCap)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     isAnswerAmountVerticalGiven = true;
                 }
                 else if (squareAmmountWantedVertical == 0 & squareAmmountWantedVerticalString == "")
@@ -152,6 +161,7 @@ namespace Square_printing_app
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.WriteLine("Random");
+                    Console.ForegroundColor = ConsoleColor.White;
                     spamModeCheck++;
                 }
                 else
@@ -162,8 +172,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int i = 0; i < 5; i++)
                     {
@@ -181,10 +195,12 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             while (isAnswerAmountHorizontalGiven == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 string squareAmmountWantedHorizontalString = Console.ReadLine(); //declare this as var to fix CS8600
                 int.TryParse(squareAmmountWantedHorizontalString, out squareAmmountWantedHorizontal);
                 if (squareAmmountWantedHorizontal >= 1 & squareAmmountWantedHorizontal <= squareAmmountCap)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     isAnswerAmountHorizontalGiven = true;
                 }
                 else if (squareAmmountWantedHorizontal == 0 & squareAmmountWantedHorizontalString == "")
@@ -199,6 +215,7 @@ namespace Square_printing_app
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.WriteLine("Random");
+                    Console.ForegroundColor = ConsoleColor.White;
                     spamModeCheck++;
                 }
                 else
@@ -209,8 +226,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int i = 0; i < 5; i++)
                     {
@@ -286,6 +307,7 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             while (isAnswerColourGiven == false)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 wantedColourString = Console.ReadLine();
                 wantedColourString = wantedColourString.ToUpper();
 
@@ -375,6 +397,7 @@ namespace Square_printing_app
                 }
                 if (wantedColourNumber >= 1 & wantedColourNumber <= 15)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     isAnswerColourGiven = true;
                 }
                 else
@@ -385,8 +408,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int i = 0; i < 5; i++)
                     {
@@ -403,6 +430,7 @@ namespace Square_printing_app
                 savedCoordY = Console.CursorTop;
                 for (int i = 1; i == 1; i = 1)
                 {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
                     string rainbowAnswer = Console.ReadLine(); //declare this as var to fix CS8600
                     rainbowAnswer = rainbowAnswer.ToUpper();
 
@@ -417,16 +445,19 @@ namespace Square_printing_app
                     if (rainbowAnswer == "HORIZONTAL")
                     {
                         rainbowModeNumber = 1;
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                     }
                     else if (rainbowAnswer == "VERTICAL")
                     {
                         rainbowModeNumber = 2;
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                     }
                     else if (rainbowAnswer == "DIAGONAL")
                     {
                         rainbowModeNumber = 3;
+                        Console.ForegroundColor = ConsoleColor.White;
                         break;
                     }
                     else
@@ -437,8 +468,12 @@ namespace Square_printing_app
                             Console.Write("                                                                                                    ");
                         }
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("Value is incorrect");
-                        Console.ReadKey();
+                        while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                        {
+
+                        }
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
                         for (int iOne = 0; iOne < 5; iOne++)
                         {
@@ -696,6 +731,7 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             for(int i = 1; i == 1; i = 1)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 string restartAnswer = Console.ReadLine(); //declare this as var to fix CS8600
                 restartAnswer = restartAnswer.ToUpper();
 
@@ -707,8 +743,9 @@ namespace Square_printing_app
                 }
                 */
 
-                if (restartAnswer == "YES")
+                if (restartAnswer == "YES" ^ restartAnswer == "Y")
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     goto SquarePrintingSequenceBegining;
                 }
                 else if (restartAnswer == "" & spamModeCheck >= 4)
@@ -720,10 +757,12 @@ namespace Square_printing_app
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.WriteLine("Spam mode successful");
+                    Console.ForegroundColor = ConsoleColor.White;
                     goto SquarePrintingSequenceBegining;
                 }
-                else if(restartAnswer == "NO")
+                else if(restartAnswer == "NO" ^ restartAnswer == "N")
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
                 }
                 else
@@ -734,8 +773,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int iOne = 0; iOne < 5; iOne++)
                     {
@@ -750,6 +793,7 @@ namespace Square_printing_app
             savedCoordY = Console.CursorTop;
             for (int i = 1; i == 1; i = 1)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 string additionalAnswer = Console.ReadLine(); //declare this as var to fix CS8600
                 additionalAnswer = additionalAnswer.ToUpper();
 
@@ -761,12 +805,31 @@ namespace Square_printing_app
                 }
                 */
 
-                if (additionalAnswer == "NO")
+                if (additionalAnswer == "NO" ^ additionalAnswer == "N")
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     break;
+                }
+                else if (additionalAnswer == "YES" ^ additionalAnswer == "Y")
+                {
+                    Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("Oh really now... What is it then?");
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
+                    Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    for (int iOne = 0; iOne < 5; iOne++)
+                    {
+                        Console.Write("                                                                                                    ");
+                    }
+                    Console.SetCursorPosition(savedCoordX, savedCoordY);
+
                 }
                 else if (additionalAnswer == "I LOVE YOU")
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.Write("   0");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -823,8 +886,12 @@ namespace Square_printing_app
                         Console.Write("                                                                                                    ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Value is incorrect");
-                    Console.ReadKey();
+                    while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                    {
+
+                    }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     for (int iOne = 0; iOne < 5; iOne++)
                     {
