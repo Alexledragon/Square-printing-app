@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 namespace Square_printing_app
@@ -23,7 +25,11 @@ namespace Square_printing_app
             Console.WriteLine("   ╚═════════════════════════════╝\n");
 
             Console.WriteLine(" Welcome! This console will allow you to display a grid of squares that follow your preferences.");
-            Console.Write(" When you are ready to proceed, press ENTER on your keyboard.");
+            Console.Write(" When you are ready to proceed, ");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("press ENTER ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("on your keyboard.");
 
             while (Console.ReadKey(true).Key != ConsoleKey.Enter)
             {
@@ -905,7 +911,14 @@ namespace Square_printing_app
 
             Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.WriteLine(" Thanks you for using my application! I hope you liked it.");
-            Console.Write(" Press space to open an information tab or press any other key to close the programm.");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write(" Press space ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("to open an information tab or ");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("press any other key ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("to close the programm.");
 
             savedCoordX = Console.CursorLeft;
             savedCoordY = Console.CursorTop;
@@ -930,7 +943,10 @@ namespace Square_printing_app
                 Console.WriteLine(" The life of a program must be quite lonely, all this time processing data, asking questions...");
                 Console.WriteLine(" I wonder what would happen if someone was to tell it \"I love you\"...\n");
 
-                Console.Write(" Press space to hide this information tab.");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write(" Press space ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("to hide this information tab.");
                 if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
