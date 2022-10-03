@@ -794,6 +794,12 @@ namespace Square_printing_app
 
             //allow the user to enter specific special lines before closing the app, mostly for easter eggs or such
 
+            string walterTriggerWord = "WALTER"; //allow to summon Walter and check how many times was he mentioned
+            bool walterIsMentioned;
+            int walterTriggerCount = 0;
+            int glitchEffectCoordX = 1;
+            int glitchEffectCoordY = 1;
+
             Console.Write(" Do you have anything else to say before ending this program? ");
             savedCoordX = Console.CursorLeft;
             savedCoordY = Console.CursorTop;
@@ -810,6 +816,60 @@ namespace Square_printing_app
                     additionalAnswer = additionalAnswer.ToUpper();
                 }
                 */
+
+                walterIsMentioned = additionalAnswer.Contains(walterTriggerWord); //check if Walter was summoned
+
+                if (walterIsMentioned == true) //try to summon Walter
+                {
+                    walterTriggerCount++;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    for(int iOne = 1; iOne <= walterTriggerCount * 3; iOne++)
+                    {
+                        Random random = new Random();
+                        glitchEffectCoordX = random.Next(1, 110);
+                        glitchEffectCoordY = random.Next(1, savedCoordY + 1);
+
+                        Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
+                        int glitchLength = random.Next(40, 100);
+                        
+                        for(int iTwo = 1; iTwo <= glitchLength; iTwo++)
+                        {
+                            int randomGlitchCharacter = random.Next(1, 10);
+                            switch (randomGlitchCharacter)
+                            {
+                                case 1:
+                                    Console.Write("░");
+                                    break;
+                                case 2:
+                                    Console.Write("▒");
+                                    break;
+                                case 3:
+                                    Console.Write("▓");
+                                    break;
+                                case 4:
+                                    Console.Write("█");
+                                    break;
+                                case 5:
+                                    Console.Write("▀");
+                                    break;
+                                case 6:
+                                    Console.Write("▄");
+                                    break;
+                                case 7:
+                                    Console.Write("▌");
+                                    break;
+                                case 8:
+                                    Console.Write("▐");
+                                    break;
+                                case 9:
+                                    Console.Write("■");
+                                    break;
+                            }
+                            Thread.Sleep(1);
+                        }
+                    }
+                }
 
                 if (additionalAnswer == "NO" ^ additionalAnswer == "N")
                 {
