@@ -819,7 +819,7 @@ namespace Square_printing_app
                 else if (additionalAnswer == "YES" ^ additionalAnswer == "Y")
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Oh really now... What is it then?");
                     while (Console.ReadKey(true).Key != ConsoleKey.Enter)
                     {
