@@ -928,7 +928,7 @@ namespace Square_printing_app
             if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
             {
                 Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
-                Console.WriteLine(" Square Printing Application (C) 2022 Alexledragon \n");
+                Console.WriteLine(" Square Printing App (C) 2022 Alexledragon \n");
 
                 Console.WriteLine(" » Can't decide on your square? «");
                 Console.WriteLine(" Did you know that if you just press enter without giving any value when the console ask you how");
