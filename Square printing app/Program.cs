@@ -10,13 +10,11 @@ namespace Square_printing_app
         //[SupportedOSPlatform("windows")] <--- remove the // to fix CA1416
         static void Main(string[] args)
         {
-            //define the size and name of the console window
+            //start and introduce the program to the user
 
-            Console.Title = "Square Printing Application";
+            Console.Title = "Square Printing App";
             Console.WindowHeight = 50;
             Console.WindowWidth = 110;
-
-            //provide instructions and software informations to the user
 
             Console.WriteLine("   ╔═════════════════════════════╗");
             Console.WriteLine("   ║ Square Printing Application ║");
@@ -39,13 +37,13 @@ namespace Square_printing_app
 
             SquarePrintingSequenceBegining:
 
-            //ask the user for how big the squares should be and make sure the answers are within norms and valid
+            //ask the user for how big the squares should be, make sure the answers are valid
 
             int squareSizeWanted = 0;
             bool isAnswerSizeGiven = false;
-            int savedCoordX;
+            int savedCoordX; //those coord are used for the UI, to erase the previous entry and let the user rewrite them in the case of an error or such
             int savedCoordY;
-            int spamModeCheck = 0;
+            int spamModeCheck = 0; //increase by one everytime user just press enter without giving a proper answer, used to trigger spam mode
 
             Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.Write(" How large do you want the squares to be? Please make it between 2 and 40 units (ex: 8): ");
@@ -99,7 +97,7 @@ namespace Square_printing_app
                 }
             }
 
-            //modify the ammount of squares the user is allowed to print depending on the size of the squares he picked, so that it can easily fit the window
+            //put a cap to the amount of squares possibly printed, to make it fit the window
 
             int squareAmmountCap = 1;
 
@@ -137,7 +135,7 @@ namespace Square_printing_app
                     break;
             }
 
-            //ask the user for how many squares to print horizontally and vertically, and make sure the answers are within norms and valid
+            //ask the user for how many squares to print horizontally and vertically, make sure the answers are valid
 
             int squareAmmountWantedVertical = 0;
             bool isAnswerAmountVerticalGiven = false;
@@ -247,7 +245,7 @@ namespace Square_printing_app
                 }
             }
 
-            //ask the user which colour he'd want the square to be after pretending him the different choices, store that choice for later
+            //show color modes to user, ask his choice and store it as a number to be treated later
 
             Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.WriteLine(" The squares are avaible in multiple colours, here are your options:\n");
@@ -305,8 +303,8 @@ namespace Square_printing_app
             int wantedColourNumber = 14;
             bool isAnswerColourGiven = false;
             bool rainbowModeEnabled = false;
-            int rainbowModeNumber = 1;
-            bool rainbowModeIsRandom = false;
+            int rainbowModeNumber = 1; //used to define if rainbow mode is horizontal, vertical or diagonal during print
+            bool rainbowModeIsRandom = false; //check if the rainbow mode was enabled by being picked by random mode, to make the next choice random as well
 
             Console.Write(" Which one do you wish your squares to be? (ex: dark blue): ");
             savedCoordX = Console.CursorLeft;
@@ -429,7 +427,7 @@ namespace Square_printing_app
                 }
             }
 
-            if(wantedColourNumber == 15 & rainbowModeIsRandom == false)
+            if(wantedColourNumber == 15 & rainbowModeIsRandom == false) //in case of rainbow mode, elaborate
             {
                 Console.Write(" Do you want your rainbow to be horizontal, vertical or diagonal? (ex: vertical): ");
                 savedCoordX = Console.CursorLeft;
@@ -490,7 +488,7 @@ namespace Square_printing_app
 
                 }
             }
-            else if(wantedColourNumber == 15 & rainbowModeIsRandom == true)
+            else if(wantedColourNumber == 15 & rainbowModeIsRandom == true) //used if rainbow mode was randomly picked, not to spoil the result and make it random as well
             {
                 Random random = new Random();
                 rainbowModeNumber = random.Next(1, 4);
@@ -555,20 +553,20 @@ namespace Square_printing_app
                     break;
             }
 
-            //create the "custom spare parts" we need for the squares, using the specifications given
-            //the inside vertical size is divided by two to compensate for the height to width ratio of a standard character
+            //create strings of the wanted size to be assembled during the print later, following the user inputs
 
             int squareInsideSizeHorizontal = squareSizeWanted - 2;
-            int squareInsideSizeVertical = (squareSizeWanted - 2) / 2;
-            string squareHorizontalLine = new string('═', squareInsideSizeHorizontal);
-            string squareHorizontalBlank = new string(' ', squareInsideSizeHorizontal);
+            int squareInsideSizeVertical = (squareSizeWanted - 2) / 2; //divided by two to compensate for the height to width diffence of a standard character in the final print
+            string squareHorizontalLine = new('═', squareInsideSizeHorizontal);
+            string squareHorizontalBlank = new(' ', squareInsideSizeHorizontal);
 
-            //print out the squares taking the inputed values in consideration, restore the default colours afterwards
+            //start the actual printing process by looping different sequences, then restore the default colour
+            //printing sequence: start by making one horizontal line of squares, from the top to bottom, then loop that sequence to create multiple other lines and adding verticality
 
-            int rainbowModeIteration = 1; //deffine the value used by the rainbow mode to cycle it's colour
-            int rainbowModeReset = 1;
+            int rainbowModeIteration = 1; //get incremented everytime the rainbow mode need to switch to the next colour, to define which one to display
+            int rainbowModeReset = 1; //reset rainbowModeIteration at every new line in vertical/diagonal mode, increment at each line during diagonal to change the starting colour
 
-            for (int i = 0; i < squareAmmountWantedVertical; i++)
+            for (int i = 0; i < squareAmmountWantedVertical; i++) //loop the horizontal square printing sequence to also print them vertically
             {
                 if (rainbowModeEnabled == true & rainbowModeNumber == 1)
                 {
@@ -603,7 +601,7 @@ namespace Square_printing_app
                 {
                     rainbowModeIteration = rainbowModeReset;
                 }
-                for (int iOne = 0; iOne < squareAmmountWantedHorizontal; iOne++)
+                for (int iOne = 0; iOne < squareAmmountWantedHorizontal; iOne++) //horizontally print the right amount of square tops
                 {
                     if (rainbowModeEnabled == true & rainbowModeNumber >= 2)
                     {
@@ -637,13 +635,13 @@ namespace Square_printing_app
                     Console.Write(" ╔" + squareHorizontalLine + "╗");
                 }
                 Console.WriteLine();
-                for (int iOne = 0; iOne < squareInsideSizeVertical; iOne++)
+                for (int iOne = 0; iOne < squareInsideSizeVertical; iOne++) //loop the inside square printing sequences to vertically create the inside as well
                 {
                     if (rainbowModeNumber >= 2)
                     {
                         rainbowModeIteration = rainbowModeReset;
                     }
-                    for (int iTwo = 0; iTwo < squareAmmountWantedHorizontal; iTwo++)
+                    for (int iTwo = 0; iTwo < squareAmmountWantedHorizontal; iTwo++) //horizontally print the right amount of square insides
                     {
                         if (rainbowModeEnabled == true & rainbowModeNumber >= 2)
                         {
@@ -682,7 +680,7 @@ namespace Square_printing_app
                 {
                     rainbowModeIteration = rainbowModeReset;
                 }
-                for (int iOne = 0; iOne < squareAmmountWantedHorizontal; iOne++)
+                for (int iOne = 0; iOne < squareAmmountWantedHorizontal; iOne++) //horizontally print the right amount of square bottoms
                 {
                     if (rainbowModeEnabled == true & rainbowModeNumber >= 2)
                     {
@@ -729,7 +727,7 @@ namespace Square_printing_app
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
 
-            //ask the user if he wish to print another square or to close the app and follow the instructions provided, break the initial while if the user is done
+            //ask the user if he wish to print another square or not, if yes then go to the begining label, before asking all the initial questions
 
             Console.WriteLine();
             Console.Write(" Would you like to create another square grid? (Yes/No): ");
@@ -793,6 +791,8 @@ namespace Square_printing_app
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                 }
             }
+
+            //allow the user to enter specific special lines before closing the app, mostly for easter eggs or such
 
             Console.Write(" Do you have anything else to say before ending this program? ");
             savedCoordX = Console.CursorLeft;
@@ -907,7 +907,7 @@ namespace Square_printing_app
                 }
             }
 
-            //the application now is told to close itself and does not repeat the initial while anymore, close the window on user input
+            //conclude the program and propose to show an extra info tab, close the app upon enter being pressed
 
             Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.WriteLine(" Thanks you for using my application! I hope you liked it.");
