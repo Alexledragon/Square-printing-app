@@ -1055,7 +1055,7 @@ namespace Square_printing_app
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Write("press any other key ");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("to close the programm.");
+            Console.Write("to close the program.");
 
             savedCoordX = Console.CursorLeft;
             savedCoordY = Console.CursorTop;
@@ -1087,9 +1087,10 @@ namespace Square_printing_app
                 if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
-                    for (int iOne = 0; iOne < 20; iOne++)
+                    Console.WriteLine("");
+                    for (int iOne = 0; iOne < 17; iOne++)
                     {
-                        Console.Write("                                                                                                    ");
+                        Console.WriteLine("                                                                                                                 ");
                     }
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     goto EndPrompt;
