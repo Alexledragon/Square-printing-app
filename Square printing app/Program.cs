@@ -819,23 +819,23 @@ namespace Square_printing_app
 
                 walterIsMentioned = additionalAnswer.Contains(walterTriggerWord); //check if Walter was summoned
 
-                if (walterIsMentioned == true) //try to summon Walter
+                if (walterIsMentioned == true) //try to summon Walter after 3 attempts, glitch the buffer at each try
                 {
                     walterTriggerCount++;
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    for(int iOne = 1; iOne <= walterTriggerCount * (2 * ((savedCoordY / 40) +1)); iOne++)
+                    for(int iOne = 1; iOne <= walterTriggerCount * (2 * ((savedCoordY / 40) +1)); iOne++) //repeat the glitch effects enough to evenly spread it no matter the text size already written
                     {
-                        Random random = new Random();
+                        Random random = new Random(); //pick a random location in the already written area to glitch out
                         glitchEffectCoordX = random.Next(1, 110);
                         glitchEffectCoordY = random.Next(1, savedCoordY + 1);
 
                         Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
                         int glitchLength = random.Next(40, 100);
                         
-                        for(int iTwo = 1; iTwo <= 2; iTwo++)
+                        for(int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
                         {
-                            string glitchBlock = "";
+                            string glitchBlock = ""; 
                             for(int iThree = 1; iThree <= glitchLength/2; iThree++)
                             {
                                 int randomGlitchCharacter = random.Next(1, 10);
@@ -874,7 +874,7 @@ namespace Square_printing_app
                             Thread.Sleep(1);
                         }
                     }
-                    int savedWindowCoordX = Console.WindowLeft;
+                    int savedWindowCoordX = Console.WindowLeft; //make the screen shake to accentuate the effect
                     int savedWindowCoordY = Console.WindowTop;
                     Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 5);
                     Console.WriteLine("");
