@@ -824,7 +824,7 @@ namespace Square_printing_app
                     walterTriggerCount++;
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    for(int iOne = 1; iOne <= walterTriggerCount * 3; iOne++)
+                    for(int iOne = 1; iOne <= walterTriggerCount * (3 * ((savedCoordY / 40) +1)); iOne++)
                     {
                         Random random = new Random();
                         glitchEffectCoordX = random.Next(1, 110);
@@ -833,42 +833,52 @@ namespace Square_printing_app
                         Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
                         int glitchLength = random.Next(40, 100);
                         
-                        for(int iTwo = 1; iTwo <= glitchLength; iTwo++)
+                        for(int iTwo = 1; iTwo <= 2; iTwo++)
                         {
-                            int randomGlitchCharacter = random.Next(1, 10);
-                            switch (randomGlitchCharacter)
+                            string glitchBlock = "";
+                            for(int iThree = 1; iThree <= glitchLength/2; iThree++)
                             {
-                                case 1:
-                                    Console.Write("░");
-                                    break;
-                                case 2:
-                                    Console.Write("▒");
-                                    break;
-                                case 3:
-                                    Console.Write("▓");
-                                    break;
-                                case 4:
-                                    Console.Write("█");
-                                    break;
-                                case 5:
-                                    Console.Write("▀");
-                                    break;
-                                case 6:
-                                    Console.Write("▄");
-                                    break;
-                                case 7:
-                                    Console.Write("▌");
-                                    break;
-                                case 8:
-                                    Console.Write("▐");
-                                    break;
-                                case 9:
-                                    Console.Write("■");
-                                    break;
+                                int randomGlitchCharacter = random.Next(1, 10);
+                                switch (randomGlitchCharacter)
+                                {
+                                    case 1:
+                                        glitchBlock += "░";
+                                        break;
+                                    case 2:
+                                        glitchBlock += "▒";
+                                        break;
+                                    case 3:
+                                        glitchBlock += "▓";
+                                        break;
+                                    case 4:
+                                        glitchBlock += "█";
+                                        break;
+                                    case 5:
+                                        glitchBlock += "▀";
+                                        break;
+                                    case 6:
+                                        glitchBlock += "▄";
+                                        break;
+                                    case 7:
+                                        glitchBlock += "▌";
+                                        break;
+                                    case 8:
+                                        glitchBlock += "▐";
+                                        break;
+                                    case 9:
+                                        glitchBlock += "■";
+                                        break;
+                                }
                             }
+                            Console.Write(glitchBlock);
                             Thread.Sleep(1);
                         }
                     }
+                    int savedWindowCoordY = Console.WindowTop;
+                    Console.SetWindowPosition(0, savedWindowCoordY + 100);
+                    Console.SetWindowPosition(0, savedWindowCoordY);
+                    Console.SetWindowPosition(0, savedWindowCoordY + 200);
+                    Console.SetWindowPosition(0, savedWindowCoordY);
                 }
 
                 if (additionalAnswer == "NO" ^ additionalAnswer == "N")
