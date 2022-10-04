@@ -824,7 +824,7 @@ namespace Square_printing_app
                     walterTriggerCount++;
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    for(int iOne = 1; iOne <= walterTriggerCount * (3 * ((savedCoordY / 40) +1)); iOne++)
+                    for(int iOne = 1; iOne <= walterTriggerCount * (2 * ((savedCoordY / 40) +1)); iOne++)
                     {
                         Random random = new Random();
                         glitchEffectCoordX = random.Next(1, 110);
@@ -874,11 +874,25 @@ namespace Square_printing_app
                             Thread.Sleep(1);
                         }
                     }
+                    int savedWindowCoordX = Console.WindowLeft;
                     int savedWindowCoordY = Console.WindowTop;
-                    Console.SetWindowPosition(0, savedWindowCoordY + 100);
-                    Console.SetWindowPosition(0, savedWindowCoordY);
-                    Console.SetWindowPosition(0, savedWindowCoordY + 200);
-                    Console.SetWindowPosition(0, savedWindowCoordY);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 5);
+                    Console.WriteLine("");
+                    Thread.Sleep(50);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY);
+                    Console.WriteLine("");
+                    Thread.Sleep(25);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 10);
+                    Console.WriteLine("");
+                    Thread.Sleep(100);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 7);
+                    Console.WriteLine("");
+                    Thread.Sleep(50);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 5);
+                    Console.WriteLine("");
+                    Thread.Sleep(50);
+                    Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY);
+                    Console.WriteLine("");
                 }
 
                 if (additionalAnswer == "NO" ^ additionalAnswer == "N")
@@ -998,7 +1012,7 @@ namespace Square_printing_app
             if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
             {
                 Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
-                Console.WriteLine(" Square Printing App (C) 2022 Alexledragon \n");
+                Console.WriteLine(" Square Printing Application (C) 2022 Alexledragon \n");
 
                 Console.WriteLine(" » Can't decide on your square? «");
                 Console.WriteLine(" Did you know that if you just press enter without giving any value when the console ask you how");
