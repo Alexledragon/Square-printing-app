@@ -824,14 +824,14 @@ namespace Square_printing_app
                     walterTriggerCount++;
                     Console.ForegroundColor = ConsoleColor.Red;
 
-                    for(int iOne = 1; iOne <= walterTriggerCount * (2 * ((savedCoordY / 40) +1)); iOne++) //repeat the glitch effects enough to evenly spread it no matter the text size already written
+                    for(int iOne = 1; iOne <= walterTriggerCount * (4 * ((savedCoordY / 40) +1)); iOne++) //repeat the glitch effects enough to evenly spread it no matter the text size already written
                     {
                         Random random = new Random(); //pick a random location in the already written area to glitch out
                         glitchEffectCoordX = random.Next(1, 110);
                         glitchEffectCoordY = random.Next(1, savedCoordY + 1);
 
                         Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
-                        int glitchLength = random.Next(40, 100);
+                        int glitchLength = random.Next(30, 81);
                         
                         for(int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
                         {
@@ -874,6 +874,59 @@ namespace Square_printing_app
                             Thread.Sleep(1);
                         }
                     }
+
+                    if (walterTriggerCount == 2)
+                    {
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        for (int iOne = 0; iOne < 5; iOne++)
+                        {
+                            Console.Write("                                                                                                    ");
+                        }
+                        Random random = new Random();
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" S                                ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ST                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ▒T █▄▌ ▒■  ▐                     ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" S░   ▄▌ ▓■▀▌      ▄░█▀▌          ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STO                              ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STOP                             ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STOP T                           ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ■T▒▓ ▀H ▄█▐   ░▒                 ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STO▓ TH█■   ░                    ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ▀▓▀▌■TH▒▓▓    █▄▄▐▒▀▄█■▓░        ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STOP THI                         ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STOP THIS                        ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" S■▄▓ ░H█▄   ▌▓▀▀■  ▒▓            ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" STOP THIS                        ");
+                        Thread.Sleep(random.Next(120, 171));
+                    }
+
                     int savedWindowCoordX = Console.WindowLeft; //make the screen shake to accentuate the effect
                     int savedWindowCoordY = Console.WindowTop;
                     Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 5);
