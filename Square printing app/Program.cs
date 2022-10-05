@@ -1212,8 +1212,74 @@ namespace Square_printing_app
         Walter:
             if(walterIsActive == true)
             {
+                for (int iOne = 1; iOne <= 250; iOne++) //repeat the glitch effects
+                {
+                    Random random = new Random(); //pick a random location in the already written area to glitch out
+                    glitchEffectCoordX = random.Next(1, 110);
+                    glitchEffectCoordY = random.Next(1, savedCoordY + 24);
+
+                    Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
+                    int glitchLength = random.Next(50, 101);
+
+                    for (int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
+                    {
+                        string glitchBlock = "";
+                        for (int iThree = 1; iThree <= glitchLength / 2; iThree++)
+                        {
+                            int randomGlitchCharacter = random.Next(1, 10);
+                            switch (randomGlitchCharacter)
+                            {
+                                case 1:
+                                    glitchBlock += "░";
+                                    break;
+                                case 2:
+                                    glitchBlock += "▒";
+                                    break;
+                                case 3:
+                                    glitchBlock += "▓";
+                                    break;
+                                case 4:
+                                    glitchBlock += "█";
+                                    break;
+                                case 5:
+                                    glitchBlock += "▀";
+                                    break;
+                                case 6:
+                                    glitchBlock += "▄";
+                                    break;
+                                case 7:
+                                    glitchBlock += "▌";
+                                    break;
+                                case 8:
+                                    glitchBlock += "▐";
+                                    break;
+                                case 9:
+                                    glitchBlock += "■";
+                                    break;
+                            }
+                        }
+                        Console.Write(glitchBlock);
+                        Thread.Sleep(1);
+                    }
+                    Random randomAlt = new Random();
+                    int screenShakeChances = random.Next(1, 101);
+                    if(screenShakeChances <= 6)
+                    {
+                        int savedWindowCoordX = Console.WindowLeft; //make the screen shake to accentuate the effect
+                        int savedWindowCoordY = Console.WindowTop;
+                        Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 5);
+                        Console.WriteLine("");
+                        Thread.Sleep(100);
+                        Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY + 7);
+                        Console.WriteLine("");
+                        Thread.Sleep(50);
+                        Console.SetWindowPosition(savedWindowCoordX, savedWindowCoordY);
+                        Console.WriteLine("");
+                        Thread.Sleep(25);
+                    }
+                }
                 Console.Clear();
-                Console.WriteLine("2 spook 4 U");
+                Console.Write("2spook4U");
                 Console.ReadKey();
             }
         }
