@@ -796,6 +796,7 @@ namespace Square_printing_app
 
             string walterTriggerWord = "WALTER"; //allow to summon Walter and check how many times was he mentioned
             bool walterIsMentioned;
+            bool walterIsActive = false;
             int walterTriggerCount = 0;
             int glitchEffectCoordX = 1;
             int glitchEffectCoordY = 1;
@@ -875,6 +876,108 @@ namespace Square_printing_app
                         }
                     }
 
+                    if(walterTriggerCount == 3)
+                    {
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        for (int iOne = 0; iOne < 5; iOne++)
+                        {
+                            Console.Write("                                                                                                    ");
+                        }
+                        Random random = new Random();
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I                                ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I W                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ■ W  ▓▄▄▌█   ▀                          ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I ▓    ▌■░▒   ▀█                        ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WA                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WAR                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARN                               ");
+                        Thread.Sleep(random.Next(50, 81));
+
+                        int savedWindowCoordXalt1 = Console.WindowLeft; //make the screen shake to accentuate the effect
+                        int savedWindowCoordYalt1 = Console.WindowTop;
+                        Console.SetWindowPosition(savedWindowCoordXalt1, savedWindowCoordYalt1 + 5);
+                        Console.WriteLine("");
+                        Thread.Sleep(100);
+                        Console.SetWindowPosition(savedWindowCoordXalt1, savedWindowCoordYalt1 + 7);
+                        Console.WriteLine("");
+                        Thread.Sleep(50);
+                        Console.SetWindowPosition(savedWindowCoordXalt1, savedWindowCoordYalt1);
+                        Console.WriteLine("");
+                        Thread.Sleep(25);
+
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I▄▌▓░■E  ▒█░▓                             ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED Y                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ▓ █▄▐░▀D Y▄▀▌  ■░▒    ▀▄                         ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARN▐▀ Y█■  ░                             ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ▀▓▀▌■NE▒▓▓    █▄▄▐▒▀▄█■▓░                         ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED YO                               ");
+                        Thread.Sleep(random.Next(50, 81));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED YOU                               ");
+                        Thread.Sleep(random.Next(120, 171));
+
+                        int savedWindowCoordXalt2 = Console.WindowLeft; //make the screen shake to accentuate the effect
+                        int savedWindowCoordYalt2 = Console.WindowTop;
+                        Console.SetWindowPosition(savedWindowCoordXalt2, savedWindowCoordYalt2 + 5);
+                        Console.WriteLine("");
+                        Thread.Sleep(50);
+                        Console.SetWindowPosition(savedWindowCoordXalt2, savedWindowCoordYalt2);
+                        Console.WriteLine("");
+                        Thread.Sleep(25);
+
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I W■▄▓E░ Y█▄   ▌▓▀▀■  ▒▓                            ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED YOU                               ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARN▓D YOU ▄■                              ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED YOU                               ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" ▄ WA▓■▀▌ ▒■U    ▄░█▀▌                           ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I ▒█▄NED YO▓■                              ");
+                        Thread.Sleep(random.Next(120, 171));
+                        Console.SetCursorPosition(savedCoordX, savedCoordY);
+                        Console.Write(" I WARNED YOU                               ");
+                        Thread.Sleep(random.Next(120, 171));
+
+                        walterIsActive = true;
+                        goto Walter;
+                    }
+
                     if (walterTriggerCount == 2)
                     {
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
@@ -904,6 +1007,16 @@ namespace Square_printing_app
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
                         Console.Write(" STOP T                           ");
                         Thread.Sleep(random.Next(50, 81));
+
+                        int savedWindowCoordXalt = Console.WindowLeft; //make the screen shake to accentuate the effect
+                        int savedWindowCoordYalt = Console.WindowTop;
+                        Console.SetWindowPosition(savedWindowCoordXalt, savedWindowCoordYalt + 5);
+                        Console.WriteLine("");
+                        Thread.Sleep(50);
+                        Console.SetWindowPosition(savedWindowCoordXalt, savedWindowCoordYalt);
+                        Console.WriteLine("");
+                        Thread.Sleep(25);
+
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
                         Console.Write(" ■T▒▓ ▀H ▄█▐   ░▒                 ");
                         Thread.Sleep(random.Next(50, 81));
@@ -1095,6 +1208,13 @@ namespace Square_printing_app
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     goto EndPrompt;
                 } 
+            }
+        Walter:
+            if(walterIsActive == true)
+            {
+                Console.Clear();
+                Console.WriteLine("2 spook 4 U");
+                Console.ReadKey();
             }
         }
     }
