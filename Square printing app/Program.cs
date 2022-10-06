@@ -1220,7 +1220,7 @@ namespace Square_printing_app
 
                 for (int iOne = 1; iOne <= 300; iOne++) //repeat the glitch effects, change iOne to modify how long the glitch effect is before clearing itself
                 {
-                    if(iOne < containmentMessageAppearence)
+                    if(iOne < 25)
                     {
                         Random randomAlt1 = new Random(); //pick a random location in the already written area to glitch out
                         glitchEffectCoordX = randomAlt1.Next(0, 110);
@@ -1277,7 +1277,7 @@ namespace Square_printing_app
                         Console.Write(glitchBlock);
                         Thread.Sleep(1);
                     }
-                    if (iOne >= containmentMessageAppearence - 25)
+                    if (iOne >= 25)
                     {
                         Console.SetWindowPosition(0, 0);
                     }
@@ -1298,11 +1298,11 @@ namespace Square_printing_app
                             }
                         }
 
-                        Console.SetCursorPosition(35, 24);
+                        Console.SetCursorPosition(35, 21);
                         Console.Write("╔════════════════════════════════════════╗");
-                        Console.SetCursorPosition(35, 25);
+                        Console.SetCursorPosition(35, 22);
                         Console.Write("║ Emergency containment protocol engaged ║");
-                        Console.SetCursorPosition(35, 26);
+                        Console.SetCursorPosition(35, 23);
                         Console.Write("╚════════════════════════════════════════╝");
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
@@ -1324,6 +1324,23 @@ namespace Square_printing_app
                         Thread.Sleep(25);
                     }
                 }
+                Console.SetCursorPosition(0, 0);
+                int screenWipeCharactersGoal = Console.WindowHeight * Console.WindowWidth;
+                int screenWipeCharactersWiped = 0;
+                while(screenWipeCharactersWiped < screenWipeCharactersGoal)
+                {
+                    Random random = new Random();
+                    for(int i = 0; i < random.Next(1, 21); i++)
+                    {
+                        int charactersAdded = random.Next(50, 301);
+                        string wipeString = new(' ', charactersAdded);
+                        Console.Write(wipeString);
+                        screenWipeCharactersWiped = screenWipeCharactersWiped + charactersAdded;
+                        Thread.Sleep(random.Next(25, 51));
+                    }
+                    Thread.Sleep(random.Next(300, 501));
+                }
+
                 Console.Clear();
                 Console.Write("2spook4U");
                 Console.ReadKey();
