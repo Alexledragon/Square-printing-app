@@ -828,8 +828,8 @@ namespace Square_printing_app
                     for(int iOne = 1; iOne <= walterTriggerCount * (4 * ((savedCoordY / 40) +1)); iOne++) //repeat the glitch effects enough to evenly spread it no matter the text size already written
                     {
                         Random random = new Random(); //pick a random location in the already written area to glitch out
-                        glitchEffectCoordX = random.Next(1, 110);
-                        glitchEffectCoordY = random.Next(1, savedCoordY + 1);
+                        glitchEffectCoordX = random.Next(0, 110);
+                        glitchEffectCoordY = random.Next(0, savedCoordY + 1);
 
                         Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
                         int glitchLength = random.Next(30, 81);
@@ -1212,12 +1212,28 @@ namespace Square_printing_app
         Walter:
             if(walterIsActive == true)
             {
-                for (int iOne = 1; iOne <= 250; iOne++) //repeat the glitch effects
-                {
-                    Random random = new Random(); //pick a random location in the already written area to glitch out
-                    glitchEffectCoordX = random.Next(1, 110);
-                    glitchEffectCoordY = random.Next(1, savedCoordY + 24);
+                int containmentMessageAppearence = 100; //change to modify when does the containment message script appear in the loop
+                int containmentMessageBlinkRate = 20; //change to modify how fast the message blink
+                int screenShakeChances = 4; //change to modify the % chances of the screep shaking at each itteration
 
+                int containmentMessageBlinkItteration = 0; //used to the blinking script at which "step" it is
+
+                for (int iOne = 1; iOne <= 300; iOne++) //repeat the glitch effects, change iOne to modify how long the glitch effect is before clearing itself
+                {
+                    if(iOne < containmentMessageAppearence)
+                    {
+                        Random randomAlt1 = new Random(); //pick a random location in the already written area to glitch out
+                        glitchEffectCoordX = randomAlt1.Next(0, 110);
+                        glitchEffectCoordY = randomAlt1.Next(0, savedCoordY + 24);
+                    }
+                    else
+                    {
+                        Random randomAlt1 = new Random(); //pick a random location top area only to glitch out
+                        glitchEffectCoordX = randomAlt1.Next(0, 110);
+                        glitchEffectCoordY = randomAlt1.Next(0, 50);
+                    }
+
+                    Random random = new Random();
                     Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
                     int glitchLength = random.Next(50, 101);
 
@@ -1261,9 +1277,39 @@ namespace Square_printing_app
                         Console.Write(glitchBlock);
                         Thread.Sleep(1);
                     }
+                    if (iOne >= containmentMessageAppearence - 25)
+                    {
+                        Console.SetWindowPosition(0, 0);
+                    }
+
+                    if(iOne >= containmentMessageAppearence)
+                    {
+                        containmentMessageBlinkItteration++;
+                        if (containmentMessageBlinkItteration <= (containmentMessageBlinkRate / 3) * 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else if(containmentMessageBlinkItteration > (containmentMessageBlinkRate /3) * 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            if(containmentMessageBlinkItteration == containmentMessageBlinkRate)
+                            {
+                                containmentMessageBlinkItteration = 0;
+                            }
+                        }
+
+                        Console.SetCursorPosition(35, 24);
+                        Console.Write("╔════════════════════════════════════════╗");
+                        Console.SetCursorPosition(35, 25);
+                        Console.Write("║ Emergency containment protocol engaged ║");
+                        Console.SetCursorPosition(35, 26);
+                        Console.Write("╚════════════════════════════════════════╝");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+
                     Random randomAlt = new Random();
-                    int screenShakeChances = random.Next(1, 101);
-                    if(screenShakeChances <= 6)
+                    int screenShakeChancesCheck = random.Next(1, 101);
+                    if(screenShakeChancesCheck <= screenShakeChances)
                     {
                         int savedWindowCoordX = Console.WindowLeft; //make the screen shake to accentuate the effect
                         int savedWindowCoordY = Console.WindowTop;
