@@ -1426,7 +1426,7 @@ namespace Square_printing_app
                 Thread.Sleep(1000);
                 Console.Write(". ");
                 Thread.Sleep(1000);
-                for(int i = 0; i < 2; i++)
+                for(int i = 0; i < 1; i++)
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.Write(".   ");
@@ -1558,7 +1558,7 @@ namespace Square_printing_app
                 Thread.Sleep(1000);
                 Console.Write(". ");
                 Thread.Sleep(1000);
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.Write(".   ");
@@ -1639,8 +1639,21 @@ namespace Square_printing_app
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.SetCursorPosition(savedCoordX, savedCoordY);
                 Console.Write("Clear");
+                Thread.Sleep(400);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("C▓ea▐▀ ■   ░");
+                Thread.Sleep(randomAlt2.Next(120, 171));
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("■lea▄    ░  ");
+                Thread.Sleep(randomAlt2.Next(120, 171));
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("            ");
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("Clear");
                 Console.ForegroundColor = ConsoleColor.White;
-                Thread.Sleep(1000);
+                Thread.Sleep(600);
 
                 Console.Write("\n\n         ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
@@ -1690,7 +1703,7 @@ namespace Square_printing_app
                 Thread.Sleep(1000);
                 Console.Write(". ");
                 Thread.Sleep(1000);
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.Write(".   ");
