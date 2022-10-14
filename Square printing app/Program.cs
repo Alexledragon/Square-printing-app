@@ -1219,7 +1219,7 @@ namespace Square_printing_app
 
                 int containmentMessageBlinkItteration = 0; //used to the blinking script at which "step" it is
 
-                for (int iOne = 1; iOne <= 300; iOne++) //repeat the glitch effects, change iOne to modify how long the glitch effect is before clearing itself
+                for (int iOne = 1; iOne <= 300; iOne++) //repeat the glitch effects, change iOne to modify how long the glitch effect is repeated before clearing itself
                 {
                     if(iOne < 25)
                     {
@@ -1875,19 +1875,201 @@ namespace Square_printing_app
                 {
 
                 }
-                Console.WriteLine("");
 
                 Random randomAlt3 = new Random();
 
-                Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
                 Thread.Sleep(3000);
+
+                Console.SetCursorPosition(39, 21);
                 Console.ForegroundColor = ConsoleColor.Red;
-                string walterResponse = " You thought i was gone don't you?";
+                string walterResponse = "You thought i was gone don't you?";
                 for (int i = 1; i <= walterResponse.Length; i++)
                 {
                     Console.Write(Strings.GetChar(walterResponse, i));
                     Thread.Sleep(randomAlt3.Next(200, 231));
                 }
+
+                Thread.Sleep(2000);
+
+                for (int i = 1; i <= 8; i++) //repeat the glitch effects
+                {
+                    if(i <= 4)
+                    {
+                        Random random = new Random(); //pick a random location in the app name
+                        glitchEffectCoordX = random.Next(0, 21);
+                        glitchEffectCoordY = random.Next(0, 6);
+                    }
+                    else
+                    {
+                        Random random = new Random(); //pick a random location in the text paragraph
+                        glitchEffectCoordX = random.Next(0, 110);
+                        glitchEffectCoordY = random.Next(7, 8);
+                    }
+
+                    Random randomAlt = new Random();
+                    Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
+                    int glitchLength = randomAlt.Next(10, 31);
+
+                    for (int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
+                    {
+                        string glitchBlock = "";
+                        for (int iThree = 1; iThree <= glitchLength / 2; iThree++)
+                        {
+                            int randomGlitchCharacter = randomAlt.Next(1, 10);
+                            switch (randomGlitchCharacter)
+                            {
+                                case 1:
+                                    glitchBlock += "░";
+                                    break;
+                                case 2:
+                                    glitchBlock += "▒";
+                                    break;
+                                case 3:
+                                    glitchBlock += "▓";
+                                    break;
+                                case 4:
+                                    glitchBlock += "█";
+                                    break;
+                                case 5:
+                                    glitchBlock += "▀";
+                                    break;
+                                case 6:
+                                    glitchBlock += "▄";
+                                    break;
+                                case 7:
+                                    glitchBlock += "▌";
+                                    break;
+                                case 8:
+                                    glitchBlock += "▐";
+                                    break;
+                                case 9:
+                                    glitchBlock += "■";
+                                    break;
+                            }
+                        }
+                        Console.Write(glitchBlock);
+                        Thread.Sleep(1);
+                    }
+                }
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(0, 0);
+                screenWipeCharactersGoal = 8 * Console.WindowWidth;
+                screenWipeCharactersWiped = 0;
+                while (screenWipeCharactersWiped < screenWipeCharactersGoal)
+                {
+                    Random random = new Random();
+                    for (int iOne = 0; iOne < random.Next(1, 3); iOne++)
+                    {
+                        int charactersAdded = random.Next(20, 51);
+                        string wipeString = new(' ', charactersAdded);
+                        Console.Write(wipeString);
+                        screenWipeCharactersWiped = screenWipeCharactersWiped + charactersAdded;
+                        //Thread.Sleep(random.Next(25, 51));
+                    }
+                    Thread.Sleep(random.Next(20, 31));
+                }
+
+                Console.Clear();
+                Console.SetCursorPosition(39, 21);
+                Console.Write(walterResponse);
+
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(43, 16);
+                string walterEyeAppear = "■   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ■";
+                for (int i = 1; i <= walterEyeAppear.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterEyeAppear, i));
+                    Thread.Sleep(randomAlt3.Next(30, 81));
+                }
+                Console.SetCursorPosition(73, 21);
+                Thread.Sleep(1000);
+
+                string walterEyeClosed1 = "                                          ";
+                string walterEyeClosed2 = "                                          ";
+                string walterEyeClosed3 = "                                          ";
+                string walterEyeClosed4 = "         ■   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ■         ";
+                string walterEyeClosed5 = "                                          ";
+                string walterEyeClosed6 = "                                          ";
+                string walterEyeClosed7 = "                                          ";
+
+                string walterEyeQuarterClosed1 = "                                          ";
+                string walterEyeQuarterClosed2 = "                                          ";
+                string walterEyeQuarterClosed3 = "              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄              ";
+                string walterEyeQuarterClosed4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeQuarterClosed5 = "              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀              ";
+                string walterEyeQuarterClosed6 = "                                          ";
+                string walterEyeQuarterClosed7 = "                                          ";
+
+                string walterEyeHalfClosed1 = "                                          ";
+                string walterEyeHalfClosed2 = "               ▄▄▄▄▄▄▄▄▄▄▄▄               ";
+                string walterEyeHalfClosed3 = "           ▄▄▄   ░░████░░   ▄▄▄           ";
+                string walterEyeHalfClosed4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeHalfClosed5 = "           ▀▀▀   ░░████░░   ▀▀▀           ";
+                string walterEyeHalfClosed6 = "               ▀▀▀▀▀▀▀▀▀▀▀▀               ";
+                string walterEyeHalfClosed7 = "                                          ";
+
+                string walterEyeOpened1 = "                ▄▄▄▄▄▄▄▄▄▄                ";
+                string walterEyeOpened2 = "             ▄▄   ░░░░░░   ▄▄             ";
+                string walterEyeOpened3 = "           ▄     ░░████░░     ▄           ";
+                string walterEyeOpened4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeOpened5 = "           ▀     ░░████░░     ▀           ";
+                string walterEyeOpened6 = "             ▀▀   ░░░░░░   ▀▀             ";
+                string walterEyeOpened7 = "                ▀▀▀▀▀▀▀▀▀▀                ";
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeQuarterClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeQuarterClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeQuarterClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeQuarterClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeQuarterClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeQuarterClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeQuarterClosed7);
+                Console.SetCursorPosition(73, 21);
+                Thread.Sleep(100);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeHalfClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeHalfClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeHalfClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeHalfClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeHalfClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeHalfClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeHalfClosed7);
+                Console.SetCursorPosition(73, 21);
+                Thread.Sleep(100);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeOpened1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeOpened2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeOpened3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeOpened4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeOpened5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeOpened6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeOpened7);
+                Console.SetCursorPosition(73, 21);
+                Thread.Sleep(100);
+
+                Console.ReadKey();
 
                 /*
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -1905,13 +2087,13 @@ namespace Square_printing_app
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                string walterEyeClosed1 = "                                             ";
-                string walterEyeClosed2 = "                                               ";
-                string walterEyeClosed3 = "                                             ";
-                string walterEyeClosed4 = "         ■   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ■               ";
+                string walterEyeClosed1 = "                                          ";
+                string walterEyeClosed2 = "                                          ";
+                string walterEyeClosed3 = "                                          ";
+                string walterEyeClosed4 = "         ■   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ■         ";
                 string walterEyeClosed5 = "                                          ";
-                string walterEyeClosed6 = "                                             ";
-                string walterEyeClosed7 = "                                       ";
+                string walterEyeClosed6 = "                                          ";
+                string walterEyeClosed7 = "                                          ";
 
                 Console.WriteLine(walterEyeClosed1);
                 Console.WriteLine(walterEyeClosed2);
@@ -1924,13 +2106,13 @@ namespace Square_printing_app
                 Thread.Sleep(50);
                 Console.Clear();
 
-                string walterEyeQuarterClosed1 = "                                             ";
-                string walterEyeQuarterClosed2 = "                                               ";
-                string walterEyeQuarterClosed3 = "              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄                  ";
-                string walterEyeQuarterClosed4 = "         ▐      ░░▐█  █▌░░      ▌               ";
-                string walterEyeQuarterClosed5 = "              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀            ";
-                string walterEyeQuarterClosed6 = "                                             ";
-                string walterEyeQuarterClosed7 = "                                       ";
+                string walterEyeQuarterClosed1 = "                                          ";
+                string walterEyeQuarterClosed2 = "                                          ";
+                string walterEyeQuarterClosed3 = "              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄              ";
+                string walterEyeQuarterClosed4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeQuarterClosed5 = "              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀              ";
+                string walterEyeQuarterClosed6 = "                                          ";
+                string walterEyeQuarterClosed7 = "                                          ";
 
                 Console.WriteLine(walterEyeQuarterClosed1);
                 Console.WriteLine(walterEyeQuarterClosed2);
@@ -1943,13 +2125,13 @@ namespace Square_printing_app
                 Thread.Sleep(50);
                 Console.Clear();
 
-                string walterEyeHalfClosed1 = "                                             ";
-                string walterEyeHalfClosed2 = "               ▄▄▄▄▄▄▄▄▄▄▄▄                   ";
-                string walterEyeHalfClosed3 = "           ▄▄▄   ░░████░░   ▄▄▄              ";
-                string walterEyeHalfClosed4 = "         ▐      ░░▐█  █▌░░      ▌               ";
-                string walterEyeHalfClosed5 = "           ▀▀▀   ░░████░░   ▀▀▀             ";
-                string walterEyeHalfClosed6 = "               ▀▀▀▀▀▀▀▀▀▀▀▀                ";
-                string walterEyeHalfClosed7 = "                                       ";
+                string walterEyeHalfClosed1 = "                                          ";
+                string walterEyeHalfClosed2 = "               ▄▄▄▄▄▄▄▄▄▄▄▄               ";
+                string walterEyeHalfClosed3 = "           ▄▄▄   ░░████░░   ▄▄▄           ";
+                string walterEyeHalfClosed4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeHalfClosed5 = "           ▀▀▀   ░░████░░   ▀▀▀           ";
+                string walterEyeHalfClosed6 = "               ▀▀▀▀▀▀▀▀▀▀▀▀               ";
+                string walterEyeHalfClosed7 = "                                          ";
 
                 Console.WriteLine(walterEyeHalfClosed1);
                 Console.WriteLine(walterEyeHalfClosed2);
@@ -1963,12 +2145,12 @@ namespace Square_printing_app
                 Console.Clear();
 
                 string walterEyeOpened1 = "                ▄▄▄▄▄▄▄▄▄▄                ";
-                string walterEyeOpened2 = "             ▄▄   ░░░░░░   ▄▄                 ";
-                string walterEyeOpened3 = "           ▄     ░░████░░     ▄               ";
-                string walterEyeOpened4 = "         ▐      ░░▐█  █▌░░      ▌               ";
-                string walterEyeOpened5 = "           ▀     ░░████░░     ▀              ";
-                string walterEyeOpened6 = "             ▀▀   ░░░░░░   ▀▀              ";
-                string walterEyeOpened7 = "                ▀▀▀▀▀▀▀▀▀▀               ";
+                string walterEyeOpened2 = "             ▄▄   ░░░░░░   ▄▄             ";
+                string walterEyeOpened3 = "           ▄     ░░████░░     ▄           ";
+                string walterEyeOpened4 = "         ▐      ░░▐█  █▌░░      ▌         ";
+                string walterEyeOpened5 = "           ▀     ░░████░░     ▀           ";
+                string walterEyeOpened6 = "             ▀▀   ░░░░░░   ▀▀             ";
+                string walterEyeOpened7 = "                ▀▀▀▀▀▀▀▀▀▀                ";
 
                 Console.WriteLine(walterEyeOpened1);
                 Console.WriteLine(walterEyeOpened2);
