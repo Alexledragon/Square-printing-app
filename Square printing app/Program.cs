@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -1721,6 +1722,342 @@ namespace Square_printing_app
                 Console.ForegroundColor = ConsoleColor.White;
                 Thread.Sleep(1000);
 
+                Console.Write("\n\n     ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("C");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("t");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("a");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("m");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("e");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("t");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write(" ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("p");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("r");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("t");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("c");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("l");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write(" ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("s");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("u");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("c");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("c");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("e");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("s");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("f");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("u");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("l ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Thread.Sleep(1000);
+
+                Console.Write("\n     ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("I");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("t");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("a");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("l");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("s");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("g");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write(" ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("r");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("e");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("b");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("o");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("t");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write(" ");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("i");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write("n");
+                Thread.Sleep(randomAlt2.Next(30, 81));
+                Console.Write(" ");
+                savedCoordX = Console.CursorLeft;
+                savedCoordY = Console.CursorTop;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("3 ");
+                Thread.Sleep(1200);
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("  ");
+                Thread.Sleep(300);
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("2 ");
+                Thread.Sleep(1200);
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("  ");
+                Thread.Sleep(300);
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("1 ");
+                Thread.Sleep(1200);
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                Console.Write("  ");
+                Thread.Sleep(2000);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+
+                Thread.Sleep(2000);
+                Console.WriteLine("   ╔═════════════════════════════╗");
+                Console.WriteLine("   ║ Square Printing Application ║");
+                Console.WriteLine("   ║         Version 1.0         ║");
+                Console.WriteLine("   ║       By Alexledragon       ║");
+                Console.WriteLine("   ╚═════════════════════════════╝\n");
+
+                Console.WriteLine(" Welcome! This console will allow you to display a grid of squares that follow your preferences.");
+                Console.Write(" When you are ready to proceed, ");
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write("press ENTER ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("on your keyboard.");
+
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter)
+                {
+
+                }
+                Console.WriteLine("");
+
+                Random randomAlt3 = new Random();
+
+                Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
+                Thread.Sleep(3000);
+                Console.ForegroundColor = ConsoleColor.Red;
+                string walterResponse = " You thought i was gone don't you?";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+
+                /*
+                Console.ForegroundColor = ConsoleColor.Red;
+                if(DateTime.Now.Hour >= 0 & DateTime.Now.Hour <= 5)
+                {
+                    walterResponse = " It is a little bit late to be on your computer, don't you think?";
+                    for(int i = 1; i <= walterResponse.Length; i++)
+                    {
+                        Console.Write(Strings.GetChar(walterResponse, i));
+                        Thread.Sleep(randomAlt3.Next(30, 81));
+                    }
+                }
+
+                for (int i = 0; i < 200; i++)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                string walterEyeClosed1 = "                                             ";
+                string walterEyeClosed2 = "                                               ";
+                string walterEyeClosed3 = "                                             ";
+                string walterEyeClosed4 = "         ■   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   ■               ";
+                string walterEyeClosed5 = "                                          ";
+                string walterEyeClosed6 = "                                             ";
+                string walterEyeClosed7 = "                                       ";
+
+                Console.WriteLine(walterEyeClosed1);
+                Console.WriteLine(walterEyeClosed2);
+                Console.WriteLine(walterEyeClosed3);
+                Console.WriteLine(walterEyeClosed4);
+                Console.WriteLine(walterEyeClosed5);
+                Console.WriteLine(walterEyeClosed6);
+                Console.WriteLine(walterEyeClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                string walterEyeQuarterClosed1 = "                                             ";
+                string walterEyeQuarterClosed2 = "                                               ";
+                string walterEyeQuarterClosed3 = "              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄                  ";
+                string walterEyeQuarterClosed4 = "         ▐      ░░▐█  █▌░░      ▌               ";
+                string walterEyeQuarterClosed5 = "              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀            ";
+                string walterEyeQuarterClosed6 = "                                             ";
+                string walterEyeQuarterClosed7 = "                                       ";
+
+                Console.WriteLine(walterEyeQuarterClosed1);
+                Console.WriteLine(walterEyeQuarterClosed2);
+                Console.WriteLine(walterEyeQuarterClosed3);
+                Console.WriteLine(walterEyeQuarterClosed4);
+                Console.WriteLine(walterEyeQuarterClosed5);
+                Console.WriteLine(walterEyeQuarterClosed6);
+                Console.WriteLine(walterEyeQuarterClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                string walterEyeHalfClosed1 = "                                             ";
+                string walterEyeHalfClosed2 = "               ▄▄▄▄▄▄▄▄▄▄▄▄                   ";
+                string walterEyeHalfClosed3 = "           ▄▄▄   ░░████░░   ▄▄▄              ";
+                string walterEyeHalfClosed4 = "         ▐      ░░▐█  █▌░░      ▌               ";
+                string walterEyeHalfClosed5 = "           ▀▀▀   ░░████░░   ▀▀▀             ";
+                string walterEyeHalfClosed6 = "               ▀▀▀▀▀▀▀▀▀▀▀▀                ";
+                string walterEyeHalfClosed7 = "                                       ";
+
+                Console.WriteLine(walterEyeHalfClosed1);
+                Console.WriteLine(walterEyeHalfClosed2);
+                Console.WriteLine(walterEyeHalfClosed3);
+                Console.WriteLine(walterEyeHalfClosed4);
+                Console.WriteLine(walterEyeHalfClosed5);
+                Console.WriteLine(walterEyeHalfClosed6);
+                Console.WriteLine(walterEyeHalfClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                string walterEyeOpened1 = "                ▄▄▄▄▄▄▄▄▄▄                ";
+                string walterEyeOpened2 = "             ▄▄   ░░░░░░   ▄▄                 ";
+                string walterEyeOpened3 = "           ▄     ░░████░░     ▄               ";
+                string walterEyeOpened4 = "         ▐      ░░▐█  █▌░░      ▌               ";
+                string walterEyeOpened5 = "           ▀     ░░████░░     ▀              ";
+                string walterEyeOpened6 = "             ▀▀   ░░░░░░   ▀▀              ";
+                string walterEyeOpened7 = "                ▀▀▀▀▀▀▀▀▀▀               ";
+
+                Console.WriteLine(walterEyeOpened1);
+                Console.WriteLine(walterEyeOpened2);
+                Console.WriteLine(walterEyeOpened3);
+                Console.WriteLine(walterEyeOpened4);
+                Console.WriteLine(walterEyeOpened5);
+                Console.WriteLine(walterEyeOpened6);
+                Console.WriteLine(walterEyeOpened7);
+
+                Thread.Sleep(3000);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeQuarterClosed1);
+                Console.WriteLine(walterEyeQuarterClosed2);
+                Console.WriteLine(walterEyeQuarterClosed3);
+                Console.WriteLine(walterEyeQuarterClosed4);
+                Console.WriteLine(walterEyeQuarterClosed5);
+                Console.WriteLine(walterEyeQuarterClosed6);
+                Console.WriteLine(walterEyeQuarterClosed7);
+
+                Thread.Sleep(30);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeClosed1);
+                Console.WriteLine(walterEyeClosed2);
+                Console.WriteLine(walterEyeClosed3);
+                Console.WriteLine(walterEyeClosed4);
+                Console.WriteLine(walterEyeClosed5);
+                Console.WriteLine(walterEyeClosed6);
+                Console.WriteLine(walterEyeClosed7);
+
+                Thread.Sleep(30);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeHalfClosed1);
+                Console.WriteLine(walterEyeHalfClosed2);
+                Console.WriteLine(walterEyeHalfClosed3);
+                Console.WriteLine(walterEyeHalfClosed4);
+                Console.WriteLine(walterEyeHalfClosed5);
+                Console.WriteLine(walterEyeHalfClosed6);
+                Console.WriteLine(walterEyeHalfClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeOpened1);
+                Console.WriteLine(walterEyeOpened2);
+                Console.WriteLine(walterEyeOpened3);
+                Console.WriteLine(walterEyeOpened4);
+                Console.WriteLine(walterEyeOpened5);
+                Console.WriteLine(walterEyeOpened6);
+                Console.WriteLine(walterEyeOpened7);
+
+                Thread.Sleep(5000);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeHalfClosed1);
+                Console.WriteLine(walterEyeHalfClosed2);
+                Console.WriteLine(walterEyeHalfClosed3);
+                Console.WriteLine(walterEyeHalfClosed4);
+                Console.WriteLine(walterEyeHalfClosed5);
+                Console.WriteLine(walterEyeHalfClosed6);
+                Console.WriteLine(walterEyeHalfClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeQuarterClosed1);
+                Console.WriteLine(walterEyeQuarterClosed2);
+                Console.WriteLine(walterEyeQuarterClosed3);
+                Console.WriteLine(walterEyeQuarterClosed4);
+                Console.WriteLine(walterEyeQuarterClosed5);
+                Console.WriteLine(walterEyeQuarterClosed6);
+                Console.WriteLine(walterEyeQuarterClosed7);
+
+                Thread.Sleep(50);
+                Console.Clear();
+
+                Console.WriteLine(walterEyeClosed1);
+                Console.WriteLine(walterEyeClosed2);
+                Console.WriteLine(walterEyeClosed3);
+                Console.WriteLine(walterEyeClosed4);
+                Console.WriteLine(walterEyeClosed5);
+                Console.WriteLine(walterEyeClosed6);
+                Console.WriteLine(walterEyeClosed7);
+
+                Thread.Sleep(2000);
+            }
+                */
                 Console.ReadKey();
             }
         }
