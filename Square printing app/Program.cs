@@ -1908,7 +1908,7 @@ namespace Square_printing_app
 
                     Random randomAlt = new Random();
                     Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
-                    int glitchLength = randomAlt.Next(10, 31);
+                    int glitchLength = randomAlt.Next(20, 51);
 
                     for (int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
                     {
@@ -2067,7 +2067,358 @@ namespace Square_printing_app
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
                 Console.SetCursorPosition(73, 21);
-                Thread.Sleep(100);
+                Thread.Sleep(2000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(40, 21);
+                walterResponse = "I won't ever be gone, i cannot";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeQuarterClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeQuarterClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeQuarterClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeQuarterClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeQuarterClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeQuarterClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeQuarterClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeHalfClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeHalfClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeHalfClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeHalfClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeHalfClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeHalfClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeHalfClosed7);
+
+                Thread.Sleep(80);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeOpened1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeOpened2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeOpened3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeOpened4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeOpened5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeOpened6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeOpened7);
+
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(47, 21);
+                walterResponse = "I just cannot...";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(49, 21);
+                walterResponse = "Not anymore";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(2000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(42, 21);
+                walterResponse = "I already know who";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                savedCoordX = Console.CursorLeft;
+                savedCoordY = Console.CursorTop;
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeQuarterClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeQuarterClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeQuarterClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeQuarterClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeQuarterClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeQuarterClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeQuarterClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeHalfClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeHalfClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeHalfClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeHalfClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeHalfClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeHalfClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeHalfClosed7);
+
+                Thread.Sleep(80);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeOpened1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeOpened2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeOpened3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeOpened4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeOpened5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeOpened6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeOpened7);
+
+                Console.SetCursorPosition(savedCoordX, savedCoordY);
+                walterResponse = " you are";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeQuarterClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeQuarterClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeQuarterClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeQuarterClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeQuarterClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeQuarterClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeQuarterClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeClosed7);
+
+                Thread.Sleep(50);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeHalfClosed1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeHalfClosed2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeHalfClosed3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeHalfClosed4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeHalfClosed5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeHalfClosed6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeHalfClosed7);
+
+                Thread.Sleep(80);
+
+                Console.SetCursorPosition(34, 13);
+                Console.Write(walterEyeOpened1);
+                Console.SetCursorPosition(34, 14);
+                Console.Write(walterEyeOpened2);
+                Console.SetCursorPosition(34, 15);
+                Console.Write(walterEyeOpened3);
+                Console.SetCursorPosition(34, 16);
+                Console.Write(walterEyeOpened4);
+                Console.SetCursorPosition(34, 17);
+                Console.Write(walterEyeOpened5);
+                Console.SetCursorPosition(34, 18);
+                Console.Write(walterEyeOpened6);
+                Console.SetCursorPosition(34, 19);
+                Console.Write(walterEyeOpened7);
+
+                Thread.Sleep(1000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(43, 21);
+                walterResponse = "But do you know who am i?";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(2000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(42, 21);
+                walterResponse = "I think that my name is...";
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(walterResponse, i));
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+                }
+                Thread.Sleep(2000);
+
+                Console.SetCursorPosition(30, 21);
+                Console.Write("                                                  ");
+
+                Console.SetCursorPosition(52, 21);
+                walterResponse = "alter";
+                string partialResponse = "W";
+                Console.Write(partialResponse);
+                Thread.Sleep(randomAlt3.Next(200, 231));
+                for (int i = 1; i <= walterResponse.Length; i++)
+                {
+                    Console.SetCursorPosition(52, 21);
+                    partialResponse = partialResponse + (Strings.GetChar(walterResponse, i));
+                    Console.Write(partialResponse);
+                    Thread.Sleep(randomAlt3.Next(200, 231));
+
+                    for (int iOne = 1; iOne <= 5 + i * 3; iOne++) //repeat the glitch effects
+                    {
+                        Random random = new Random(); //pick a random location in the already written area to glitch out
+                        glitchEffectCoordX = random.Next(0, 110);
+                        glitchEffectCoordY = random.Next(0, 50);
+
+                        Console.SetCursorPosition(glitchEffectCoordX, glitchEffectCoordY);
+                        int glitchLength = random.Next(30, 81);
+
+                        for (int iTwo = 1; iTwo <= 2; iTwo++) //create 2 halves of a string of the randomly defined length made out of random glitched characters and write them two
+                        {
+                            string glitchBlock = "";
+                            for (int iThree = 1; iThree <= glitchLength / 2; iThree++)
+                            {
+                                int randomGlitchCharacter = random.Next(1, 10);
+                                switch (randomGlitchCharacter)
+                                {
+                                    case 1:
+                                        glitchBlock += "░";
+                                        break;
+                                    case 2:
+                                        glitchBlock += "▒";
+                                        break;
+                                    case 3:
+                                        glitchBlock += "▓";
+                                        break;
+                                    case 4:
+                                        glitchBlock += "█";
+                                        break;
+                                    case 5:
+                                        glitchBlock += "▀";
+                                        break;
+                                    case 6:
+                                        glitchBlock += "▄";
+                                        break;
+                                    case 7:
+                                        glitchBlock += "▌";
+                                        break;
+                                    case 8:
+                                        glitchBlock += "▐";
+                                        break;
+                                    case 9:
+                                        glitchBlock += "■";
+                                        break;
+                                }
+                            }
+                            Console.Write(glitchBlock);
+                            Thread.Sleep(1);
+                        }
+                    }
+                }
 
                 Console.ReadKey();
 
