@@ -24,6 +24,7 @@ namespace Square_printing_app
             Console.WriteLine("   ╚═════════════════════════════╝\n");
 
             Console.WriteLine(" Welcome! This console will allow you to display a grid of squares that follow your preferences.");
+            Console.WriteLine(" For a better experience, it is recommended to leave this console at the size it took by default.\n");
             Console.Write(" When you are ready to proceed, ");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.Write("press ENTER ");
@@ -44,7 +45,7 @@ namespace Square_printing_app
             bool isAnswerSizeGiven = false;
             int savedCoordX; //those coord are used for the UI, to erase the previous entry and let the user rewrite them in the case of an error or such
             int savedCoordY;
-            int spamModeCheck = 0; //increase by one everytime user just press enter without giving a proper answer, used to trigger spam mode
+            int spamModeCheck = 0; //increase by one every time user just press enter without giving a proper answer, used to trigger spam mode
 
             Console.WriteLine("\n════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.Write(" How large do you want the squares to be? Please make it between 2 and 40 units (ex: 8): ");
@@ -249,7 +250,7 @@ namespace Square_printing_app
             //show color modes to user, ask his choice and store it as a number to be treated later
 
             Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════");
-            Console.WriteLine(" The squares are avaible in multiple colours, here are your options:\n");
+            Console.WriteLine(" The squares are available in multiple colors, here are your options:\n");
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(" [Red] ");
@@ -497,7 +498,7 @@ namespace Square_printing_app
 
             Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════");
 
-            //apply the colour requested by the user before printing the squares
+            //apply the color requested by the user before printing the squares
 
             switch (wantedColourNumber)
             {
@@ -557,15 +558,15 @@ namespace Square_printing_app
             //create strings of the wanted size to be assembled during the print later, following the user inputs
 
             int squareInsideSizeHorizontal = squareSizeWanted - 2;
-            int squareInsideSizeVertical = (squareSizeWanted - 2) / 2; //divided by two to compensate for the height to width diffence of a standard character in the final print
+            int squareInsideSizeVertical = (squareSizeWanted - 2) / 2; //divided by two to compensate for the height to width difference of a standard character in the final print
             string squareHorizontalLine = new('═', squareInsideSizeHorizontal);
             string squareHorizontalBlank = new(' ', squareInsideSizeHorizontal);
 
-            //start the actual printing process by looping different sequences, then restore the default colour
+            //start the actual printing process by looping different sequences, then restore the default color
             //printing sequence: start by making one horizontal line of squares, from the top to bottom, then loop that sequence to create multiple other lines and adding verticality
 
-            int rainbowModeIteration = 1; //get incremented everytime the rainbow mode need to switch to the next colour, to define which one to display
-            int rainbowModeReset = 1; //reset rainbowModeIteration at every new line in vertical/diagonal mode, increment at each line during diagonal to change the starting colour
+            int rainbowModeIteration = 1; //get incremented every time the rainbow mode need to switch to the next color, to define which one to display
+            int rainbowModeReset = 1; //reset rainbowModeIteration at every new line in vertical/diagonal mode, increment at each line during diagonal to change the starting color
 
             for (int i = 0; i < squareAmmountWantedVertical; i++) //loop the horizontal square printing sequence to also print them vertically
             {
@@ -728,7 +729,7 @@ namespace Square_printing_app
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
 
-            //ask the user if he wish to print another square or not, if yes then go to the begining label, before asking all the initial questions
+            //ask the user if he wish to print another square or not, if yes then go to the beginning label, before asking all the initial questions
 
             Console.WriteLine();
             Console.Write(" Would you like to create another square grid? (Yes/No): ");
@@ -976,7 +977,7 @@ namespace Square_printing_app
                         Thread.Sleep(random.Next(120, 171));
 
                         walterIsActive = true;
-                        goto Walter;
+                        goto Walter; //start the full Walter sequence
                     }
 
                     if (walterTriggerCount == 2)
@@ -1187,12 +1188,17 @@ namespace Square_printing_app
 
                 Console.WriteLine(" » Spam it to the limit «");
                 Console.WriteLine(" Also, if during the creation of your square you just keep pressing enter, it will enable spam mode.");
-                Console.WriteLine(" This is not a bug, but a feature! It allow you to just spam enter to creater endlesses random squares.");
+                Console.WriteLine(" This is not a bug, but a feature! It allow you to just spam enter to endlessly create random squares.");
                 Console.WriteLine(" Why not giving it a try?\n");
 
                 Console.WriteLine(" » Codes have feelings too «");
                 Console.WriteLine(" The life of a program must be quite lonely, all this time processing data, asking questions...");
                 Console.WriteLine(" I wonder what would happen if someone was to tell it \"I love you\"...\n");
+
+                Console.WriteLine(" » A strange name in the program «");
+                Console.WriteLine(" A name, \"Walter\" appeared multiple times in the code during the conception of this application.");
+                Console.WriteLine(" No matter how many times it would be erased, the name would re-appear.");
+                Console.WriteLine(" Maybe the program know who it is...\n");
 
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.Write(" Press space ");
@@ -1202,7 +1208,7 @@ namespace Square_printing_app
                 {
                     Console.SetCursorPosition(savedCoordX, savedCoordY);
                     Console.WriteLine("");
-                    for (int iOne = 0; iOne < 17; iOne++)
+                    for (int iOne = 0; iOne < 22; iOne++)
                     {
                         Console.WriteLine("                                                                                                                 ");
                     }
@@ -1210,12 +1216,15 @@ namespace Square_printing_app
                     goto EndPrompt;
                 } 
             }
+
         Walter:
             if(walterIsActive == true)
             {
+                //glitch the entire screen and display a message, after a few iterations, force the window to scroll back up to get more control over the screen shake
+
                 int containmentMessageAppearence = 100; //change to modify when does the containment message script appear in the loop
                 int containmentMessageBlinkRate = 20; //change to modify how fast the message blink
-                int screenShakeChances = 4; //change to modify the % chances of the screep shaking at each itteration
+                int screenShakeChances = 4; //change to modify the % chances of the screen shaking at each iteration
 
                 int containmentMessageBlinkItteration = 0; //used to the blinking script at which "step" it is
 
@@ -1325,6 +1334,9 @@ namespace Square_printing_app
                         Thread.Sleep(25);
                     }
                 }
+
+                //clear the console progressively for a smoother transition
+
                 Console.SetCursorPosition(0, 0);
                 int screenWipeCharactersGoal = Console.WindowHeight * Console.WindowWidth;
                 int screenWipeCharactersWiped = 0;
@@ -1342,6 +1354,8 @@ namespace Square_printing_app
                     Thread.Sleep(random.Next(300, 501));
                 }
 
+                //hard clear the console, then display a fake verification screen
+
                 Console.Clear();
                 Thread.Sleep(5000);
                 Console.ForegroundColor = ConsoleColor.White;
@@ -1351,72 +1365,12 @@ namespace Square_printing_app
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 Console.Write("     ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("C");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("a");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("m");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("p");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("l");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("v");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("a");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                string sentenceToPrint = "Containment protocol verification";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.Write(" ---> ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 savedCoordX = Console.CursorLeft;
@@ -1447,42 +1401,12 @@ namespace Square_printing_app
 
                 Console.Write("\n\n         ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("V");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("y");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("g");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("1");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("/");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("4");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                sentenceToPrint = "Verifying core 1/4";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.Write(" ---> ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 savedCoordX = Console.CursorLeft;
@@ -1513,42 +1437,12 @@ namespace Square_printing_app
 
                 Console.Write("\n\n         ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("V");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("y");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("g");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("2");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("/");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("4");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                sentenceToPrint = "Verifying core 2/4";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.Write(" ---> ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 savedCoordX = Console.CursorLeft;
@@ -1579,42 +1473,12 @@ namespace Square_printing_app
 
                 Console.Write("\n\n         ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("V");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("y");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("g");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("3");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("/");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("4");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                sentenceToPrint = "Verifying core 3/4";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.Write(" ---> ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 savedCoordX = Console.CursorLeft;
@@ -1658,42 +1522,12 @@ namespace Square_printing_app
 
                 Console.Write("\n\n         ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("V");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("y");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("g");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("4");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("/");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("4");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                sentenceToPrint = "Verifying core 4/4";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.Write(" ---> ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
                 savedCoordX = Console.CursorLeft;
@@ -1724,116 +1558,30 @@ namespace Square_printing_app
 
                 Console.Write("\n\n     ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("C");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("a");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("m");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("p");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("l");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
+                sentenceToPrint = "Containment protocol ";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("s");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("u");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("c");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("s");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("f");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("u");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("l ");
+                sentenceToPrint = "successful";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.ForegroundColor = ConsoleColor.White;
                 Thread.Sleep(1000);
 
                 Console.Write("\n     ");
                 Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("I");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("a");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("l");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("s");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("g");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("r");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("e");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("b");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("o");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("t");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("i");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write("n");
-                Thread.Sleep(randomAlt2.Next(30, 81));
-                Console.Write(" ");
+                sentenceToPrint = "Initializing reboot in ";
+                for (int i = 1; i <= sentenceToPrint.Length; i++)
+                {
+                    Console.Write(Strings.GetChar(sentenceToPrint, i));
+                    Thread.Sleep(randomAlt2.Next(30, 81));
+                }
                 Console.CursorVisible = false;
                 savedCoordX = Console.CursorLeft;
                 savedCoordY = Console.CursorTop;
@@ -1858,6 +1606,8 @@ namespace Square_printing_app
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Clear();
 
+                //clear the console and show a fake representation of the initial screen
+
                 Thread.Sleep(2000);
                 Console.CursorVisible = true;
                 Console.WriteLine("   ╔═════════════════════════════╗");
@@ -1867,11 +1617,14 @@ namespace Square_printing_app
                 Console.WriteLine("   ╚═════════════════════════════╝\n");
 
                 Console.WriteLine(" Welcome! This console will allow you to display a grid of squares that follow your preferences.");
+                Console.WriteLine(" For a better experience, it is recommended to leave this console at the size it took by default.\n");
                 Console.Write(" When you are ready to proceed, ");
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.Write("press ENTER ");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("on your keyboard.");
+
+                //wait for the user to press enter to show Walter's eye animation and text
 
                 while (Console.ReadKey(true).Key != ConsoleKey.Enter)
                 {
@@ -1893,7 +1646,7 @@ namespace Square_printing_app
 
                 Thread.Sleep(2000);
 
-                for (int i = 1; i <= 8; i++) //repeat the glitch effects
+                for (int i = 1; i <= 10; i++) //repeat the glitch effects
                 {
                     if(i <= 4)
                     {
@@ -1905,7 +1658,7 @@ namespace Square_printing_app
                     {
                         Random random = new Random(); //pick a random location in the text paragraph
                         glitchEffectCoordX = random.Next(0, 110);
-                        glitchEffectCoordY = random.Next(7, 8);
+                        glitchEffectCoordY = random.Next(7, 10);
                     }
 
                     Random randomAlt = new Random();
@@ -2020,6 +1773,7 @@ namespace Square_printing_app
                 string walterEyeOpened6 = "             ▀▀   ░░░░░░   ▀▀             ";
                 string walterEyeOpened7 = "                ▀▀▀▀▀▀▀▀▀▀                ";
 
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(34, 13);
                 Console.Write(walterEyeQuarterClosed1);
                 Console.SetCursorPosition(34, 14);
@@ -2069,6 +1823,7 @@ namespace Square_printing_app
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
                 Console.SetCursorPosition(73, 21);
+                Console.CursorVisible = true;
                 Thread.Sleep(2000);
 
                 Console.SetCursorPosition(30, 21);
@@ -2083,6 +1838,7 @@ namespace Square_printing_app
                 }
                 Thread.Sleep(1000);
 
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(34, 13);
                 Console.Write(walterEyeQuarterClosed1);
                 Console.SetCursorPosition(34, 14);
@@ -2149,6 +1905,7 @@ namespace Square_printing_app
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
                 Console.SetCursorPosition(70, 21);
+                Console.CursorVisible = true;
 
                 Thread.Sleep(1000);
 
@@ -2189,6 +1946,7 @@ namespace Square_printing_app
                 savedCoordX = Console.CursorLeft;
                 savedCoordY = Console.CursorTop;
 
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(34, 13);
                 Console.Write(walterEyeQuarterClosed1);
                 Console.SetCursorPosition(34, 14);
@@ -2254,6 +2012,7 @@ namespace Square_printing_app
                 Console.Write(walterEyeOpened6);
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
+                Console.CursorVisible = true;
 
                 Console.SetCursorPosition(savedCoordX, savedCoordY);
                 walterResponse = " you are";
@@ -2264,6 +2023,7 @@ namespace Square_printing_app
                 }
                 Thread.Sleep(500);
 
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(34, 13);
                 Console.Write(walterEyeQuarterClosed1);
                 Console.SetCursorPosition(34, 14);
@@ -2329,6 +2089,7 @@ namespace Square_printing_app
                 Console.Write(walterEyeOpened6);
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
+                Console.CursorVisible = true;
                 Console.SetCursorPosition(68, 21);
 
                 Thread.Sleep(1500);
