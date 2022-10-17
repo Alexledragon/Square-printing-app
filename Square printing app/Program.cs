@@ -2210,6 +2210,31 @@ namespace Square_printing_app
                     Console.Write(partialResponse);
                     Thread.Sleep(randomAlt3.Next(30, 51));
                 }
+
+                for (int i = 0; i < 20; i++)
+                {
+                    Console.SetCursorPosition(0, 0 + i);
+                    Console.Write("                                                  ");
+                }
+                Thread.Sleep(30);
+                for (int i = 0; i < 12; i++)
+                {
+                    Console.SetCursorPosition(60, 25 + i);
+                    Console.Write("                                        ");
+                }
+                Thread.Sleep(50);
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.SetCursorPosition(70, 10 + i);
+                    Console.Write("                                   ");
+                }
+                Thread.Sleep(40);
+                for (int i = 0; i < 16; i++)
+                {
+                    Console.SetCursorPosition(10, 30 + i);
+                    Console.Write("                                      ");
+                }
+                Thread.Sleep(30);
             }
         }
     }
