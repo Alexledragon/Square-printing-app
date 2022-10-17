@@ -1192,7 +1192,7 @@ namespace Square_printing_app
                 Console.WriteLine(" Why not giving it a try?\n");
 
                 Console.WriteLine(" » Codes have feelings too «");
-                Console.WriteLine(" The life of a program must be quite lonely, all this time processing data, asking questions...");
+                Console.WriteLine(" The life of a program must be quite lonely, all this time asking questions and printing squares...");
                 Console.WriteLine(" I wonder what would happen if someone was to tell it \"I love you\"...\n");
 
                 Console.WriteLine(" » A strange name in the program «");
@@ -2118,6 +2118,7 @@ namespace Square_printing_app
                 }
                 Thread.Sleep(2000);
 
+                Console.CursorVisible = false;
                 Console.SetCursorPosition(30, 21);
                 Console.Write("                                                  ");
 
