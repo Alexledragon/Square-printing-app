@@ -1635,9 +1635,9 @@ namespace Square_printing_app
 
                 Thread.Sleep(3000);
 
-                Console.SetCursorPosition(39, 21);
+                Console.SetCursorPosition(38, 21);
                 Console.ForegroundColor = ConsoleColor.Red;
-                string walterResponse = "You thought i was gone don't you?";
+                string walterResponse = "You thought i was gone didn't you?";
                 for (int i = 1; i <= walterResponse.Length; i++)
                 {
                     Console.Write(Strings.GetChar(walterResponse, i));
@@ -1726,7 +1726,7 @@ namespace Square_printing_app
                 }
 
                 Console.Clear();
-                Console.SetCursorPosition(39, 21);
+                Console.SetCursorPosition(38, 21);
                 Console.Write(walterResponse);
 
                 Thread.Sleep(1000);
@@ -1738,7 +1738,7 @@ namespace Square_printing_app
                     Console.Write(Strings.GetChar(walterEyeAppear, i));
                     Thread.Sleep(randomAlt3.Next(30, 81));
                 }
-                Console.SetCursorPosition(73, 21);
+                Console.SetCursorPosition(72, 21);
                 Thread.Sleep(1000);
 
                 string walterEyeClosed1 = "                                          ";
@@ -1788,7 +1788,7 @@ namespace Square_printing_app
                 Console.Write(walterEyeQuarterClosed6);
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeQuarterClosed7);
-                Console.SetCursorPosition(73, 21);
+                Console.SetCursorPosition(72, 21);
                 Thread.Sleep(100);
 
                 Console.SetCursorPosition(34, 13);
@@ -1805,7 +1805,7 @@ namespace Square_printing_app
                 Console.Write(walterEyeHalfClosed6);
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeHalfClosed7);
-                Console.SetCursorPosition(73, 21);
+                Console.SetCursorPosition(72, 21);
                 Thread.Sleep(100);
 
                 Console.SetCursorPosition(34, 13);
@@ -1822,7 +1822,7 @@ namespace Square_printing_app
                 Console.Write(walterEyeOpened6);
                 Console.SetCursorPosition(34, 19);
                 Console.Write(walterEyeOpened7);
-                Console.SetCursorPosition(73, 21);
+                Console.SetCursorPosition(72, 21);
                 Console.CursorVisible = true;
                 Thread.Sleep(2000);
 
