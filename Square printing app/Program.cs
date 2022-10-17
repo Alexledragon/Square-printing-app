@@ -974,7 +974,7 @@ namespace Square_printing_app
                         Thread.Sleep(random.Next(120, 171));
                         Console.SetCursorPosition(savedCoordX, savedCoordY);
                         Console.Write(" I WARNED YOU                               ");
-                        Thread.Sleep(random.Next(120, 171));
+                        Thread.Sleep(200);
 
                         walterIsActive = true;
                         goto Walter; //start the full Walter sequence
